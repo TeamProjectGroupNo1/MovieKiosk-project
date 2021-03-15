@@ -128,22 +128,23 @@ public class MovieTicketDAO {
 		}
 		return list;
 	}
-	public int delMovieTicket(String userId) {
-		int result = 0;
+	public boolean delMovieTicket(String userId, String movieName) {
 		if(connect()) {
 			try {
-				String sql = "delete from movie_ticket where id = ?";
+				String sql = "delete from movie_ticket where id = ? and movie_name = ?";
 				ps = con.prepareStatement(sql);
 				ps.setString(1, userId);
-				result = ps.executeUpdate();
+				ps.setString(2, movieName);
+				ps.executeUpdate();
 				disconnect();
+				return true;
 			}catch(SQLException e) {
 				System.out.println(e.getMessage());
 			}
 		}else {
 			System.out.println("db connected failed");
 		}
-		return result;
+		return false;
 	}
 	
 }

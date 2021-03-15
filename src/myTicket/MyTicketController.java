@@ -104,8 +104,9 @@ public class MyTicketController implements Initializable{
 		System.out.println("movie info is clicked");
 	}
 	public void clkCancelTicket() {
-		if (new MovieTicketDAO().delMovieTicket(CommonService.getUserId()) == 1) {
+		if (new MovieTicketDAO().delMovieTicket(CommonService.getUserId(), list.get(ticketPage).getMovieName())) {
 			CommonService.alertInfoShow("정삭적으로 예매취소 되었습니다.");
+			ticketPage = -1;
 			setItems();
 		}else {
 			CommonService.alertWarnShow("예매취소 오류가 발생했습니다.");
