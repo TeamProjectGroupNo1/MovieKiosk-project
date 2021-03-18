@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="harry.harryCon">
+   <children>
+      <MediaView fx:id="harryMedia" fitHeight="200.0" fitWidth="350.0" layoutX="25.0" layoutY="89.0" />
+      <Button fx:id="harrybtnPlay" layoutX="43.0" layoutY="299.0" mnemonicParsing="false" onAction="#myPlay" prefHeight="22.0" prefWidth="64.0" text="재생" />
+      <Button fx:id="harrybtnPause" layoutX="168.0" layoutY="299.0" mnemonicParsing="false" onAction="#myStop" prefHeight="22.0" prefWidth="64.0" text="일시정지" />
+      <Button fx:id="harrybtnStop" layoutX="293.0" layoutY="299.0" mnemonicParsing="false" onAction="#myPause" prefHeight="22.0" prefWidth="64.0" text="멈춤" />
+      <ImageView fx:id="fximageView1" fitHeight="32.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resources/media/back.png" />
+         </image></ImageView>
+      <ImageView fitHeight="32.0" fitWidth="86.0" layoutX="184.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resources/media/clapperboard.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="91.0" layoutY="56.0" prefHeight="24.0" prefWidth="218.0" text="해리포터 - 죽음의성물 2">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Button layoutX="43.0" layoutY="512.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="64.0" text="평점보기" />
+      <Button layoutX="167.0" layoutY="512.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="64.0" text="리뷰보기" />
+      <Button layoutX="293.0" layoutY="512.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="64.0" text="지금예매" />
+      <ImageView fitHeight="75.0" fitWidth="124.0" layoutX="41.0" layoutY="425.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resources/media/해리포터2.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="77.0" fitWidth="201.0" layoutX="168.0" layoutY="428.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resources/media/해리포터.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </ImageView>
+      <Label layoutX="41.0" layoutY="365.0" text="덤블도어 교장이 남긴 ‘죽음의 성물’의 단서를 쫓던 해리 포터는 볼드모트가 ">
+         <font>
+            <Font size="10.0" />
+         </font></Label>
+      <Label layoutX="43.0" layoutY="394.0" text="찾아 다닌 절대적인 힘의 지팡이 비밀을 통해 마지막 퍼즐을 완성한다.">
+         <font>
+            <Font size="10.0" />
+         </font></Label>
+      <ImageView fitHeight="22.0" fitWidth="32.0" layoutX="41.0" layoutY="331.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resources/media/word.PNG" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
