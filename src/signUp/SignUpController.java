@@ -11,9 +11,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.DatePicker;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
@@ -69,12 +67,13 @@ public class SignUpController implements Initializable {
 			CommonService.alertWarnShow("ID를 입력하지 않았습니다.");
 		}else if( memberDAO.getPwd(tfId.getText()) == null ) {	// 사용가능한 ID인지 확인
 			CommonService.alertInfoShow("사용 가능한 ID 입니다.");
-			btnSubmit.setDisable(false);
+			btnSubmit.setDisable(false);	// 가입하기 버튼 활성화
 			chkId = true;	// chkId true
 		}else {
 			CommonService.alertWarnShow("이미 존재하는 ID 입니다.");
 			btnChkId.setDisable(true);	// 중복확인 비활성화
 			tfId.clear();	// 입력한 Id 지움
+			tfId.requestFocus();
 		}
 	}
 	public void clkSubmit() {

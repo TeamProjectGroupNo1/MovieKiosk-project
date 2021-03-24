@@ -1,14 +1,20 @@
 package common;
 
+import java.util.HashMap;
+
 import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 
 public class CommonService {
+	private static HashMap<String, String> movieTitle;
 	private static Parent mainRoot;
 	private static Alert alert;
 	private static String userId;
+	public CommonService(){
+		setMovieTitle();
+	}
 	public static void setMainRoot(Parent root) {
 		mainRoot = root;
 	}
@@ -48,7 +54,32 @@ public class CommonService {
 	public static void alertShowAndWait(String msg, Parent root) {
 		alert = new Alert(AlertType.INFORMATION);
 		alert.setContentText(msg);
-		alert.showAndWait();
-		exit(root);
+		alert.showAndWait();	// alert 창 닫기 대기
+		exit(root);	// alert 창 닫히면 해당 page 닫고 main page 열기
+	}
+	
+	private void setMovieTitle() {
+		movieTitle = new HashMap<>();
+		movieTitle.put("Avengers_01", "어벤져스");
+		movieTitle.put("Avengers_02", "어벤져스 에이지 오브 울트론");
+		movieTitle.put("Avengers_03", "어벤져스 인피니티 워");
+		movieTitle.put("Avengers_04", "어벤져스 엔드게임");
+		movieTitle.put("HarryPotter_08", "해리포터 죽음의 성물2");
+		movieTitle.put("Parasite", "기생충");
+		movieTitle.put("Soul", "소울");
+	}
+	
+	public static String getMovieName(String movie) {
+		return movieTitle.get(movie);
+	}
+	
+	public static String getMovie(String movie) {
+		for(String key: movieTitle.keySet()) {
+			System.out.println(key);
+			if(movieTitle.get(key).equals(movie)) {
+				return key;
+			}
+		}
+		return "";
 	}
 }

@@ -7,19 +7,19 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login.LoginController">
+<AnchorPane prefHeight="600" prefWidth="400.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login.LoginController">
    <children>
       <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="358.0" layoutY="253.0" onMouseClicked="#clkRight" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../resources/img/icon/right.png" />
          </image>
       </ImageView>
-      <Button layoutX="61.0" layoutY="537.0" mnemonicParsing="false" onMouseClicked="#clkMyTicket" prefHeight="50.0" prefWidth="120.0" text="My Ticket">
+      <Button layoutX="72.0" layoutY="536.0" mnemonicParsing="false" onMouseClicked="#clkMyTicket" prefHeight="50.0" prefWidth="100.0" text="My Ticket">
          <font>
             <Font name="Consolas" size="14.0" />
          </font>
       </Button>
-      <Button layoutX="221.0" layoutY="537.0" mnemonicParsing="false" onMouseClicked="#clkMyHistory" prefHeight="50.0" prefWidth="120.0" text="My History">
+      <Button layoutX="205.0" layoutY="536.0" mnemonicParsing="false" onMouseClicked="#clkMyHistory" prefHeight="50.0" prefWidth="100.0" text="My History">
          <font>
             <Font name="Consolas" size="14.0" />
          </font>
@@ -44,9 +44,9 @@
             <Image url="@../resources/img/icon/multimedia.png" />
          </image>
       </ImageView>
-      <AnchorPane layoutX="61.0" layoutY="77.0" onMouseClicked="#clkMovieInfo" prefHeight="455.0" prefWidth="280.0">
+      <AnchorPane layoutX="61.0" layoutY="77.0" prefHeight="455.0" prefWidth="280.0">
          <children>
-            <ImageView fx:id="imgMoviePoster" fitHeight="379.0" fitWidth="273.0" layoutX="4.0" layoutY="17.0" onMouseEntered="#scaleEnter" onMouseExited="#scaleExit" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="imgMoviePoster" fitHeight="379.0" fitWidth="273.0" layoutX="4.0" layoutY="17.0" onMouseClicked="#clkMovieInfo" onMouseEntered="#scaleEnter" onMouseExited="#scaleExit" pickOnBounds="true" preserveRatio="true" />
             <Label fx:id="labMovieName" alignment="CENTER" layoutX="9.0" layoutY="416.0" prefHeight="29.0" prefWidth="263.0" text="영화제목">
                <font>
                   <Font size="24.0" />

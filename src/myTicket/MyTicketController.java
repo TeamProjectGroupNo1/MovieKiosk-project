@@ -3,7 +3,6 @@ package myTicket;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.ResourceBundle;
 
@@ -55,12 +54,7 @@ public class MyTicketController implements Initializable{
 		ImageView imgDown = (ImageView)root.lookup("#imgDown");
 		apNoTicket.setVisible(false);
 		apTicket.setVisible(true);
-		switch(list.get(page).getMovieName()) {
-			case "Avengers_04": labMovieName.setText("어벤져스 엔드게임"); break;
-			case "HarryPotter_08": labMovieName.setText("해리포터 죽음의 성물2"); break;
-			case "Parasite": labMovieName.setText("기생충"); break;
-			case "Soul": labMovieName.setText("소울"); break;
-		}
+		labMovieName.setText(CommonService.getMovieName(list.get(page).getMovieName()));
 		imgMoviePoster.setImage(new Image("resources/img/movie/"+list.get(page).getMovieName()+".jpg"));
 		labPosi.setText(list.get(page).getPlace());
 		labDate.setText(list.get(page).getDate());

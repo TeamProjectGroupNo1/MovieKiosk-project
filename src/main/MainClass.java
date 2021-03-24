@@ -2,6 +2,7 @@ package main;
 
 import java.io.IOException;
 
+import common.CommonService;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -12,6 +13,7 @@ import javafx.stage.StageStyle;
 public class MainClass extends Application {
 	@Override
 	public void start(Stage primaryStage) {
+		new CommonService();
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("main.fxml"));
 		Parent root = null;
 		try {

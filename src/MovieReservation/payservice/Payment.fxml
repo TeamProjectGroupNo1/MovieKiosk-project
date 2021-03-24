@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MovieReservation.payservice.PayserviceController">
+   <children>
+      <ImageView fitHeight="156.0" fitWidth="303.0" layoutX="52.0" layoutY="136.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../resources/img/pay/pay.PNG" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="98.0" fitWidth="67.0" layoutX="167.0" layoutY="62.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../resources/img/pay/pay1.PNG" />
+         </image>
+      </ImageView>
+      <Button fx:id="btncancel" layoutX="259.0" layoutY="320.0" mnemonicParsing="false" onAction="#payCancel" text="결제 취소" />
+      <Button layoutX="85.0" layoutY="320.0" mnemonicParsing="false" onAction="#clkComp" text="결제 완료" />
+   </children>
+</AnchorPane>

@@ -10,6 +10,8 @@ import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import movieInfo.MovieInfo;
+import movieInfo.MovieInfoImpl;
 import myHistory.MyHistoryService;
 import myHistory.MyHistoryServiceImpl;
 import myTicket.MyTicketServiceImpl;
@@ -19,19 +21,22 @@ public class LoginController implements Initializable{
 	@FXML ImageView imgMoviePoster;
 	private MyTicketService mtsi;
 	private MyHistoryService mhsi;
+	private MovieInfo mii;
 	Parent root;
 	Parent preRoot;
 	private int moviePage;
+	private String movieName;
 	public void setRoot(Parent preRoot, Parent root) {
 		this.root = root;
 		this.preRoot = preRoot;
 		moviePage = 0;
-		clkRight(); //첫 화면 포스터, 영화제목 설정
+		setMovieChart();
 	}
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		mtsi = new MyTicketServiceImpl();
 		mhsi = new MyHistoryServiceImpl();
+		mii = new MovieInfoImpl();
 	}
 	public void clkBack() {
 		CommonService.back(preRoot, root);
@@ -46,25 +51,27 @@ public class LoginController implements Initializable{
 		imgMoviePoster.setScaleY(1);
 	}
 	public void clkRight() {
-		imgMoviePoster.setImage(new Image("resources/img/movie/"+setMovieTitle(moviePage++)+".jpg"));
-		if(moviePage > 3) moviePage = 0;
+		moviePage++;
+		if(moviePage > 3)
+			moviePage = 0;
+		setMovieChart();
 	}
 	public void clkLeft() {
-		imgMoviePoster.setImage(new Image("resources/img/movie/"+setMovieTitle(moviePage--)+".jpg"));
-		if(moviePage < 0) moviePage = 3;
+		moviePage--;
+		if(moviePage < 0)
+			moviePage = 3;
+		setMovieChart();
 	}
-	public String setMovieTitle(int page) {
-		String movieName = "";
-		String setTitle = "";
+	public void setMovieChart() {
 		Label labMovieName = (Label)root.lookup("#labMovieName");
-		switch(page) {
-			case 0: movieName = "Avengers_04"; setTitle = "어벤져스 엔드게임"; break;
-			case 1:	movieName = "HarryPotter_08"; setTitle = "해리포터 죽음의 성물2"; break;
-			case 2: movieName = "Parasite"; setTitle = "기생충"; break;
-			case 3: movieName = "Soul"; setTitle = "소울"; break;
+		switch(moviePage) {
+			case 0: movieName = "Avengers_04"; break;
+			case 1:	movieName = "HarryPotter_08"; break;
+			case 2: movieName = "Parasite"; break;
+			case 3: movieName = "Soul"; break;
 		}
-		labMovieName.setText(setTitle);
-		return movieName;
+		labMovieName.setText(CommonService.getMovieName(movieName));
+		imgMoviePoster.setImage(new Image("resources/img/movie/"+movieName+".jpg"));
 	}
 	public void clkMyTicket() {
 		mtsi.showMyTicket(root);
@@ -75,6 +82,7 @@ public class LoginController implements Initializable{
 		CommonService.closeRoot(root);
 	}
 	public void clkMovieInfo() {
-		System.out.println("movie is clicked");
+		mii.movieInfo(root, movieName);
+		CommonService.closeRoot(root);	
 	}
 }

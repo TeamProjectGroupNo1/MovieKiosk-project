@@ -66,7 +66,7 @@
             </ImageView>
             <AnchorPane fx:id="apHistoryBox1" layoutX="10.0" layoutY="37.0" prefHeight="83.0" prefWidth="360.0" style="-fx-border-color: gray;">
                <children>
-                  <ImageView fx:id="imgMovie1" fitHeight="73.0" fitWidth="63.0" layoutX="5.0" layoutY="5.0" onMouseClicked="#clkMovieInfo" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="imgMovie1" fitHeight="73.0" fitWidth="63.0" layoutX="5.0" layoutY="5.0" onMouseClicked="#clkInfo1" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../resources/img/movie/Avengers_04.jpg" />
                      </image>
@@ -81,12 +81,12 @@
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label fx:id="labReview1" layoutX="86.0" layoutY="57.0" onMouseClicked="#clkWriteReview" prefHeight="18.0" prefWidth="270.0" text="리뷰를 작성해 주세요">
+                  <Label fx:id="labReview1" layoutX="86.0" layoutY="57.0" onMouseClicked="#clkReview1" prefHeight="18.0" prefWidth="270.0" text="리뷰를 작성해 주세요">
                      <font>
                         <Font size="11.0" />
                      </font>
                   </Label>
-                  <ImageView fx:id="imgStar1" fitHeight="16.0" fitWidth="16.0" layoutX="67.0" layoutY="58.0" onMouseClicked="#clkWriteReview" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="imgStar1" fitHeight="16.0" fitWidth="16.0" layoutX="67.0" layoutY="58.0" onMouseClicked="#clkReview1" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../resources/img/icon/star_+.png" />
                      </image>
@@ -95,7 +95,7 @@
             </AnchorPane>
             <AnchorPane fx:id="apHistoryBox2" layoutX="10.0" layoutY="130.0" prefHeight="83.0" prefWidth="360.0" style="-fx-border-color: gray;">
                <children>
-                  <ImageView fx:id="imgMovie2" fitHeight="73.0" fitWidth="63.0" layoutX="5.0" layoutY="5.0" onMouseClicked="#clkMovieInfo" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="imgMovie2" fitHeight="73.0" fitWidth="63.0" layoutX="5.0" layoutY="5.0" onMouseClicked="#clkInfo2" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../resources/img/movie/Avengers_03.jpg" />
                      </image>
@@ -110,12 +110,12 @@
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label fx:id="labReview2" layoutX="86.0" layoutY="57.0" onMouseClicked="#clkWriteReview" prefHeight="18.0" prefWidth="270.0" text="리뷰를 작성해 주세요">
+                  <Label fx:id="labReview2" layoutX="86.0" layoutY="57.0" onMouseClicked="#clkReview2" prefHeight="18.0" prefWidth="270.0" text="리뷰를 작성해 주세요">
                      <font>
                         <Font size="11.0" />
                      </font>
                   </Label>
-                  <ImageView fx:id="imgStar2" fitHeight="16.0" fitWidth="16.0" layoutX="67.0" layoutY="58.0" onMouseClicked="#clkWriteReview" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="imgStar2" fitHeight="16.0" fitWidth="16.0" layoutX="67.0" layoutY="58.0" onMouseClicked="#clkReview2" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../resources/img/icon/star_+.png" />
                      </image>
@@ -124,7 +124,7 @@
             </AnchorPane>
             <AnchorPane fx:id="apHistoryBox3" layoutX="10.0" layoutY="223.0" prefHeight="83.0" prefWidth="360.0" style="-fx-border-color: gray;">
                <children>
-                  <ImageView fx:id="imgMovie3" fitHeight="73.0" fitWidth="63.0" layoutX="5.0" layoutY="5.0" onMouseClicked="#clkMovieInfo" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="imgMovie3" fitHeight="73.0" fitWidth="63.0" layoutX="5.0" layoutY="5.0" onMouseClicked="#clkInfo3" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../resources/img/movie/Avengers_02.jpg" />
                      </image>
@@ -139,12 +139,12 @@
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label fx:id="labReview3" layoutX="86.0" layoutY="57.0" onMouseClicked="#clkWriteReview" prefHeight="18.0" prefWidth="270.0" text="리뷰를 작성해 주세요">
+                  <Label fx:id="labReview3" layoutX="86.0" layoutY="57.0" onMouseClicked="#clkReview3" prefHeight="18.0" prefWidth="270.0" text="리뷰를 작성해 주세요">
                      <font>
                         <Font size="11.0" />
                      </font>
                   </Label>
-                  <ImageView fx:id="imgStar3" fitHeight="16.0" fitWidth="16.0" layoutX="67.0" layoutY="58.0" onMouseClicked="#clkWriteReview" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="imgStar3" fitHeight="16.0" fitWidth="16.0" layoutX="67.0" layoutY="58.0" onMouseClicked="#clkReview3" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../resources/img/icon/star_+.png" />
                      </image>
@@ -153,7 +153,7 @@
             </AnchorPane>
             <AnchorPane fx:id="apHistoryBox4" layoutX="10.0" layoutY="316.0" prefHeight="83.0" prefWidth="360.0" style="-fx-border-color: gray;">
                <children>
-                  <ImageView fx:id="imgMovie4" fitHeight="73.0" fitWidth="63.0" layoutX="5.0" layoutY="5.0" onMouseClicked="#clkMovieInfo" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="imgMovie4" fitHeight="73.0" fitWidth="63.0" layoutX="5.0" layoutY="5.0" onMouseClicked="#clkInfo4" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../resources/img/movie/Avengers_01.jpg" />
                      </image>
@@ -168,12 +168,12 @@
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label fx:id="labReview4" layoutX="86.0" layoutY="57.0" onMouseClicked="#clkWriteReview" prefHeight="18.0" prefWidth="270.0" text="리뷰를 작성해 주세요">
+                  <Label fx:id="labReview4" layoutX="86.0" layoutY="57.0" onMouseClicked="#clkReview4" prefHeight="18.0" prefWidth="270.0" text="리뷰를 작성해 주세요">
                      <font>
                         <Font size="11.0" />
                      </font>
                   </Label>
-                  <ImageView fx:id="imgStar4" fitHeight="16.0" fitWidth="16.0" layoutX="67.0" layoutY="58.0" onMouseClicked="#clkWriteReview" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="imgStar4" fitHeight="16.0" fitWidth="16.0" layoutX="67.0" layoutY="58.0" onMouseClicked="#clkReview4" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../resources/img/icon/star_+.png" />
                      </image>

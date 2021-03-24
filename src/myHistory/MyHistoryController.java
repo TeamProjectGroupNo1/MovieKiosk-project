@@ -14,8 +14,12 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import memberInfo.MemberInfoDAO;
 import memberInfo.MemberInfoDTO;
+import movieInfo.MovieInfo;
+import movieInfo.MovieInfoImpl;
 import movieReview.MovieReviewDAO;
 import movieReview.MovieReviewDTO;
+import movieReview.MovieReviewService;
+import movieReview.MovieReviewServiceImpl;
 import movieTicket.MovieTicketDAO;
 import movieTicket.MovieTicketDTO;
 
@@ -78,15 +82,7 @@ public class MyHistoryController implements Initializable{
 		ImageView imgStar1 = (ImageView)root.lookup("#imgStar1");
 		if(historyIndex < list.size()) {
 			apHistoryBox1.setVisible(true);
-			switch(list.get(historyIndex).getMovieName()) {
-				case "Avengers_01": labMovieTitle1.setText("어벤져스"); break;
-				case "Avengers_02": labMovieTitle1.setText("어벤져스 에이지 오브 울트론"); break;
-				case "Avengers_03": labMovieTitle1.setText("어벤져스 인피니티 워"); break;
-				case "Avengers_04": labMovieTitle1.setText("어벤져스 엔드게임"); break;
-				case "HarryPotter_08": labMovieTitle1.setText("해리포터 죽음의 성물2"); break;
-				case "Parasite": labMovieTitle1.setText("기생충"); break;
-				case "Soul": labMovieTitle1.setText("소울"); break;
-			}
+			labMovieTitle1.setText(CommonService.getMovieName(list.get(historyIndex).getMovieName()));
 			imgMovie1.setImage(new Image("resources/img/movie/"+list.get(historyIndex).getMovieName()+".jpg"));
 			labDatetime1.setText(list.get(historyIndex).getDateTime());
 			review = (new MovieReviewDAO()).getMovieReview(CommonService.getUserId(), list.get(historyIndex).getMovieName());
@@ -121,15 +117,7 @@ public class MyHistoryController implements Initializable{
 		ImageView imgStar2 = (ImageView)root.lookup("#imgStar2");
 		if(historyIndex+1 < list.size()) {
 			apHistoryBox2.setVisible(true);
-			switch(list.get(historyIndex+1).getMovieName()) {
-				case "Avengers_01": labMovieTitle2.setText("어벤져스"); break;
-				case "Avengers_02": labMovieTitle2.setText("어벤져스 에이지 오브 울트론"); break;
-				case "Avengers_03": labMovieTitle2.setText("어벤져스 인피니티 워"); break;
-				case "Avengers_04": labMovieTitle2.setText("어벤져스 엔드게임"); break;
-				case "HarryPotter_08": labMovieTitle2.setText("해리포터 죽음의 성물2"); break;
-				case "Parasite": labMovieTitle2.setText("기생충"); break;
-				case "Soul": labMovieTitle2.setText("소울"); break;
-			}
+			labMovieTitle2.setText(CommonService.getMovieName(list.get(historyIndex+1).getMovieName()));
 			imgMovie2.setImage(new Image("resources/img/movie/"+list.get(historyIndex+1).getMovieName()+".jpg"));
 			labDatetime2.setText(list.get(historyIndex+1).getDateTime());
 			review = (new MovieReviewDAO()).getMovieReview(CommonService.getUserId(), list.get(historyIndex+1).getMovieName());
@@ -164,15 +152,7 @@ public class MyHistoryController implements Initializable{
 		ImageView imgStar3 = (ImageView)root.lookup("#imgStar3");
 		if(historyIndex+2 < list.size()) {
 			apHistoryBox3.setVisible(true);
-			switch(list.get(historyIndex+2).getMovieName()) {
-				case "Avengers_01": labMovieTitle3.setText("어벤져스"); break;
-				case "Avengers_02": labMovieTitle3.setText("어벤져스 에이지 오브 울트론"); break;
-				case "Avengers_03": labMovieTitle3.setText("어벤져스 인피니티 워"); break;
-				case "Avengers_04": labMovieTitle3.setText("어벤져스 엔드게임"); break;
-				case "HarryPotter_08": labMovieTitle3.setText("해리포터 죽음의 성물2"); break;
-				case "Parasite": labMovieTitle3.setText("기생충"); break;
-				case "Soul": labMovieTitle3.setText("소울"); break;
-			}
+			labMovieTitle3.setText(CommonService.getMovieName(list.get(historyIndex+2).getMovieName()));
 			imgMovie3.setImage(new Image("resources/img/movie/"+list.get(historyIndex+2).getMovieName()+".jpg"));
 			labDatetime3.setText(list.get(historyIndex+2).getDateTime());
 			review = (new MovieReviewDAO()).getMovieReview(CommonService.getUserId(), list.get(historyIndex+2).getMovieName());
@@ -207,15 +187,7 @@ public class MyHistoryController implements Initializable{
 		ImageView imgStar4 = (ImageView)root.lookup("#imgStar4");
 		if(historyIndex+3 < list.size()) {
 			apHistoryBox4.setVisible(true);
-			switch(list.get(historyIndex+3).getMovieName()) {
-				case "Avengers_01": labMovieTitle4.setText("어벤져스"); break;
-				case "Avengers_02": labMovieTitle4.setText("어벤져스 에이지 오브 울트론"); break;
-				case "Avengers_03": labMovieTitle4.setText("어벤져스 인피니티 워"); break;
-				case "Avengers_04": labMovieTitle4.setText("어벤져스 엔드게임"); break;
-				case "HarryPotter_08": labMovieTitle4.setText("해리포터 죽음의 성물2"); break;
-				case "Parasite": labMovieTitle4.setText("기생충"); break;
-				case "Soul": labMovieTitle4.setText("소울"); break;
-			}
+			labMovieTitle4.setText(CommonService.getMovieName(list.get(historyIndex+3).getMovieName()));
 			imgMovie4.setImage(new Image("resources/img/movie/"+list.get(historyIndex+3).getMovieName()+".jpg"));
 			labDatetime4.setText(list.get(historyIndex+3).getDateTime());
 			review = (new MovieReviewDAO()).getMovieReview(CommonService.getUserId(), list.get(historyIndex+3).getMovieName());
@@ -263,10 +235,44 @@ public class MyHistoryController implements Initializable{
 			setHistory();
 		}
 	}
-	public void clkMovieInfo() {
-		System.out.println("movie info is clicked");
+	
+	public void clkInfo1() {
+		clkMovieInfo(CommonService.getMovieName(list.get(historyIndex).getMovieName()));
 	}
-	public void clkWriteReview() {
-		System.out.println("write Review is clicked");
+	public void clkInfo2() {
+		clkMovieInfo(CommonService.getMovieName(list.get(historyIndex+1).getMovieName()));
+	}
+	public void clkInfo3() {
+		clkMovieInfo(CommonService.getMovieName(list.get(historyIndex+2).getMovieName()));
+	}
+	public void clkInfo4() {
+		clkMovieInfo(CommonService.getMovieName(list.get(historyIndex+3).getMovieName()));
+	}
+	public void clkReview1() {
+		clkWriteReview(CommonService.getMovieName(list.get(historyIndex).getMovieName()));
+	}
+	public void clkReview2() {
+		clkWriteReview(CommonService.getMovieName(list.get(historyIndex+1).getMovieName()));
+	}
+	public void clkReview3() {
+		clkWriteReview(CommonService.getMovieName(list.get(historyIndex+2).getMovieName()));
+	}
+	public void clkReview4() {
+		clkWriteReview(CommonService.getMovieName(list.get(historyIndex+3).getMovieName()));
+	}
+	public void clkMovieInfo(String movieName) {
+		System.out.println(movieName);
+		System.out.println(CommonService.getMovie(movieName));
+		MovieInfo mii = new MovieInfoImpl();
+		mii.movieInfo(root, CommonService.getMovie(movieName));
+		CommonService.closeRoot(root);	
+	}
+	public void clkWriteReview(String movieName) {
+		System.out.println(movieName);
+		System.out.println(CommonService.getMovie(movieName));
+		MovieReviewService mrsi = new MovieReviewServiceImpl();
+		System.out.println(movieName);
+		mrsi.showMovieReviewPage(root, CommonService.getMovie(movieName));
+		CommonService.closeRoot(root);
 	}
 }

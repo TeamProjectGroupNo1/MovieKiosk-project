@@ -109,4 +109,31 @@ public class MovieReviewDAO {
 		}
 		return list;
 	}
+	
+	public ArrayList<MovieReviewDTO> getMovieReview(String movieName) {
+		ArrayList<MovieReviewDTO> list = null;
+		MovieReviewDTO review = null;
+		if(connect()) {
+			try {
+				String sql = "select * from movie_review where movie_name = '"+ movieName +"'";
+				ps = con.prepareStatement(sql);
+				rs = ps.executeQuery();
+				list = new ArrayList<>();
+				while(rs.next()) {
+					review = new MovieReviewDTO();
+					review.setId(rs.getString(1));
+					review.setMovieName(rs.getString(2));
+					review.setStarRate(rs.getDouble(3));
+					review.setMovieComment(rs.getString(4));
+					list.add(review);
+				}
+				disconnect();
+			}catch(SQLException e) {
+				System.out.println(e.getMessage());
+			}
+		}else {
+			System.out.println("db connected failed");
+		}
+		return list;
+	}
 }
